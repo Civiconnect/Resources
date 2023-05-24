@@ -1,0 +1,20 @@
+- Use Copilot (Student plan available)
+- Tabs not Spaces
+- Every project should have a .prettierrc config file
+- Write comments
+  - For every new component, document what the props are (if applicable), what the component does, how it should be used, etc.
+  - When writing functions, write 1 or 2 lines briefly explaining what the function does and what it's used for
+  - In general, comments should be focused on *why* something works a certain way, rather what *what* it does specifically.
+- Destructured props are preferred
+- Use whitespace (empty lines) to separate code, where appropriate
+- Use Font Awesome Icons for any icons.  The inline version ```<i className="fa-solid fa-house"></i>``` is preferred over the React Component version, but either is acceptable.  Do not use inline SVGs unless necessary.
+- Use TODO: notation to highlight pieces of code that are partially implemented and need to be finished later
+- Any commits that fix an issue should reference the issue using "Fixes #123" notation to automatically close the issue
+- Share any env variables in a password-protected file within the project channel in Teams.
+- Only install packages that have been approved by your Team Lead, and when new packages are added, make note of it in your commit message
+- camelCase for variable names (code), and SnakeCase for strapi fields.
+- Components should have only one return value
+- Make sure you're working with the same Node version as your teammates.
+- Install react snippets and use the "rfc" snippet when creating new components.
+- Functional components only, class-based components should only be used if absolutely necessary.
+- Remove all console.logs when you commit and push your code
