@@ -12,7 +12,7 @@ const { createCoreController } = require("@strapi/strapi").factories;
 const noreplyEmail = "example.noreply@gmail.com"
 
 module.exports = createCoreController(
-	"api::contact-form-submission.contact-form-submission",
+	"api::contact-form-submission.contact-form-submission", //TODO - make sure this line matches the api id
 	({ strapi }) => ({
 		// Wraps core create route
 		async create(ctx) {
