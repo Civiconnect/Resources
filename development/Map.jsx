@@ -1,3 +1,10 @@
+// To use this component you'll need to have the following CSS import in the <head>
+// <link
+//   href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+//   rel="stylesheet"
+// />
+// And you'll need an image file called 'map-pin-solid.png' containing the image used for the map pin
+
 import React, { useState, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 
