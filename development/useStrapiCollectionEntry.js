@@ -1,3 +1,5 @@
+// Documentation: https://raykeating.notion.site/useStrapiCollectionEntry-Hook-52ab756ab7c3438fb6038209023789db?pvs=4
+
 import { useState, useEffect } from "react";
 
 const useStrapiCollectionEntry = (pluralApiId, entryId) => {
