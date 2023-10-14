@@ -1,3 +1,5 @@
+// Documentation: https://raykeating.notion.site/useStrapiCollection-Hook-71c72ad328cf46ed9bb43b46b0369862?pvs=4
+
 /**
  * This hook can be used to fetch a collection of items from Strapi.
  * @param {string} pluralApiId - The pluralized API ID of the collection (e.g. "articles" for "Article").
