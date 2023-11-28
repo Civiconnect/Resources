@@ -19,6 +19,31 @@ export default function SwipeableCarousel({ children }) {
         }
     }, [activeCard]);
 
+    // when card enters the viewport, set it as the active card
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveCard(parseInt(entry.target.dataset.index));
+                    }
+                });
+            },
+            { threshold: 0.5 },
+        );
+
+        cardRefs.current.forEach((card, index) => {
+            observer.observe(card);
+            card.dataset.index = index;
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    
+
     return (
         <>
             <div className="flex max-w-screen m-4 overflow-x-scroll gap-[4%] border border-green-300 p-4">
