@@ -26,19 +26,17 @@ module.exports = createCoreController(
 			const requestData = ctx.request.body.data;
 
 			// send email using strapi email plugin
-			notificationRecipients.forEach(async (recipient) => {
-				await strapi.plugins["email"].services.email.send({
-					to: recipient.Email,
-					from: noreplyEmail,
-					subject: "You've received a message from your website!",
-					html: `<p>Hi,</p>
-                  <p>You've received a message from ${requestData.FirstName} ${requestData.LastName}.</p>
-                  <p><strong>Message:</strong></p>
-                  <p>${requestData.Message}</p>
-                  <p>Here is their contact info:</p>
-                  <p>Email: ${requestData.Email}</p>
-                  <p>Phone: ${requestData.PhoneNumber}</p>`,
-				});
+			await strapi.plugins["email"].services.email.send({
+				to: notificationRecipients.map(recipient => recipient.Email),
+				from: noreplyEmail,
+				subject: "You've received a message from your website!",
+				html: `<p>Hi,</p>
+	  <p>You've received a message from ${requestData.FirstName} ${requestData.LastName}.</p>
+	  <p><strong>Message:</strong></p>
+	  <p>${requestData.Message}</p>
+	  <p>Here is their contact info:</p>
+	  <p>Email: ${requestData.Email}</p>
+	  <p>Phone: ${requestData.PhoneNumber}</p>`,
 			});
 
 			return { data, meta };
